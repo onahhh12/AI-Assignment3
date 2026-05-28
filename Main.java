@@ -112,7 +112,7 @@ public class Main {
                 double f1Test   = Metrics.f1Score(bestOverall.tree, test);
                 int    treeSize = TreeUtils.getAllNodes(bestOverall.tree).size();
 
-                System.out.println("\n RUN " + (run + 1) + " RESULTS ");
+                System.out.println("\n--- RUN " + (run + 1) + " RESULTS ---");
                 System.out.println("Tree size:         " + treeSize + " nodes");
                 System.out.println("Training Accuracy: " + trainAcc);
                 System.out.println("Test Accuracy:     " + testAcc);
@@ -127,7 +127,7 @@ public class Main {
             }
 
             long overallEndTime = System.currentTimeMillis();
-            System.out.println("\n THE BEST TREE ACROSS ALL 30 RUNS");
+            System.out.println("\n========== FINAL BEST ACROSS ALL 30 RUNS ==========");
             System.out.println("Best Run:          " + bestRunNumber + " (seed=" + (baseSeed + bestRunNumber - 1) + ")");
             System.out.println("Tree size:         " + TreeUtils.getAllNodes(bestAcrossAllRuns.tree).size() + " nodes");
             System.out.println("Training Accuracy: " + Metrics.accuracy(bestAcrossAllRuns.tree, train));
