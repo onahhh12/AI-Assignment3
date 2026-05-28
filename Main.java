@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static final double PARSIMONY_COEFFICIENT = 0.0002;
+    static final double PARSIMONY_COEFFICIENT = 0.0003;
 
     static double fitnessWithParsimony(Node tree, List<Instance> data) {
         double f1 = Metrics.f1Score(tree, data);
@@ -114,8 +114,8 @@ public class Main {
 
                 System.out.println("\n--- RUN " + (run + 1) + " RESULTS ---");
                 System.out.println("Tree size:         " + treeSize + " nodes");
-                System.out.println("Training Accuracy: " + trainAcc);
-                System.out.println("Test Accuracy:     " + testAcc);
+                System.out.println("Training Accuracy: " + String.format("%.2f%%", trainAcc * 100));
+                System.out.println("Test Accuracy:     " + String.format("%.2f%%", testAcc * 100));
                 System.out.println("F1 Score (test):   " + f1Test);
                 System.out.println("Runtime:           " + (endTime - startTime) + " ms");
                 System.out.println("Best Tree: "         + bestOverall.tree);
